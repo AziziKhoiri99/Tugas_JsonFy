@@ -1,36 +1,36 @@
 import React from 'react';
 import axios from 'axios';
 
-class Posts extends React.Component {
+class Items extends React.Component {
 
   constructor(props) {
     super(props);
 
     this.state = {
-      posts: []
+      items: []
     }
   }
 
   componentDidMount() {
-    axios.get('https://jsonfy.com/posts')
+    axios.get('https://jsonfy.com/items')
     .then(res => {
     console.log(res);
     this.setState({
-      posts: res.data, 
+      items: res.data, 
     });
   });
   }
 
   render() {
-    const { posts = [] } = this.state;
+    const { items = [] } = this.state;
     return (
       <div className="App">
         <nav class="nav-extended">
         <div class="nav-wrapper">
-          <a href="/Posts" class="brand-logo">Posts</a>
+          <a href="/Items" class="brand-logo">Items</a>
           <a href="/" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="/Posts">Home</a></li>
+            <li><a href="/">Home</a></li>
           </ul>
         </div>
         <div class="nav-content">
@@ -47,31 +47,34 @@ class Posts extends React.Component {
       </nav>
 
       <ul class="sidenav" id="mobile-demo">
-        <li><a href="/Posts">Home</a></li> 
+        <li><a href="/">Home</a></li> 
       </ul>
         <header className="App-header">
         <table border="1">
             <thead>
             <tr>
                 <th>ID</th>
-                <th align="right">Use Pos Fk</th>
-                <th align="right">Title</th>
-                <th align="right">Excerpt</th>
-                <th align="right">Body</th>
-                <th align="right">Date Add</th>
-                <th align="right">Date Upd</th>
+                <th align="right">Name</th>
+                <th align="right">Description</th>
+                <th align="right">Wholesale Price</th>                
+                <th align="right">Price</th>                
+                <th align="right">Photo</th>                
+                <th align="right">Date</th>                
+                <th align="right">Bra Ite Fk</th>                
+
             </tr>
             </thead>
             <tbody>
-            {posts.map(todo => 
+            {items.map(todo => 
                 <tr key={todo.id}>
                 <td>{todo.id}</td>
-                <td align="right">{todo.use_pos_fk}</td>
-                <td align="right">{todo.title}</td>
-                <td align="right">{todo.excerpt}</td>
-                <td align="right">{todo.body}</td>
-                <td align="right">{todo.date_add}</td>
+                <td align="right">{todo.name}</td>
+                <td align="right">{todo.description}</td>
+                <td align="right">{todo.wholesale_price}</td>
+                <td align="right">{todo.price}</td>
+                <td align="right">{todo.photo_url}</td>
                 <td align="right">{todo.date_upd}</td>
+                <td align="right">{todo.bra_ite_fk}</td>
                 </tr>
             )}
             </tbody>
@@ -83,4 +86,4 @@ class Posts extends React.Component {
   }
 }
 
-export default Posts;
+export default Items;

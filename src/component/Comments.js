@@ -27,8 +27,8 @@ class Comments extends React.Component {
       <div className="App">
         <nav class="nav-extended">
         <div class="nav-wrapper">
-          <a href="#" class="brand-logo">Comments</a>
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <a href="/Comments" class="brand-logo">Comments</a>
+          <a href="/" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="/">Home</a></li>
           </ul>
@@ -38,6 +38,10 @@ class Comments extends React.Component {
             <li class="tab"><a href="/Posts">Posts</a></li>
             <li class="tab"><a href="/Comments">Comments</a></li>
             <li class="tab"><a href="/Users">Users</a></li>
+            <li class="tab"><a href="/Albums">Albums</a></li>
+            <li class="tab"><a href="/Photos">Photos</a></li>
+            <li class="tab"><a href="/Categories">Categories</a></li>
+            <li class="tab"><a href="/Items">Items</a></li>
           </ul>
         </div>
       </nav>

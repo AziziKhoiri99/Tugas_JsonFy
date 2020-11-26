@@ -24,6 +24,36 @@ class Home extends Component {
                     </a>
                     10 users
                     </p>
+                    <p>
+                    <a href="/Albums">
+                        /albums
+                    </a>
+                    10 users
+                    </p>                    
+                    <p>
+                    <a href="/Photos">
+                        /photos
+                    </a>
+                    10 users
+                    </p>                    
+                    <p>
+                    <a href="/Categories">
+                        /Categories
+                    </a>
+                    10 users
+                    </p>                    
+                    <p>
+                    <a href="/Brands">
+                        /Brands
+                    </a>
+                    10 users
+                    </p>                    
+                    <p>
+                    <a href="/Items">
+                        /Items
+                    </a>
+                    10 users
+                    </p>
                     <h5>Note: resources have relations. For example: posts have many comments, albums have many photos, ... see guide for the full list.</h5>
             </div>
         )

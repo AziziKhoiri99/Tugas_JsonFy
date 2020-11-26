@@ -1,36 +1,36 @@
 import React from 'react';
 import axios from 'axios';
 
-class Posts extends React.Component {
+class Brands extends React.Component {
 
   constructor(props) {
     super(props);
 
     this.state = {
-      posts: []
+      brands: []
     }
   }
 
   componentDidMount() {
-    axios.get('https://jsonfy.com/posts')
+    axios.get('https://jsonfy.com/brands')
     .then(res => {
     console.log(res);
     this.setState({
-      posts: res.data, 
+      brands: res.data, 
     });
   });
   }
 
   render() {
-    const { posts = [] } = this.state;
+    const { brands = [] } = this.state;
     return (
       <div className="App">
         <nav class="nav-extended">
         <div class="nav-wrapper">
-          <a href="/Posts" class="brand-logo">Posts</a>
+          <a href="/Brands" class="brand-logo">Brands</a>
           <a href="/" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="/Posts">Home</a></li>
+            <li><a href="/">Home</a></li>
           </ul>
         </div>
         <div class="nav-content">
@@ -47,31 +47,23 @@ class Posts extends React.Component {
       </nav>
 
       <ul class="sidenav" id="mobile-demo">
-        <li><a href="/Posts">Home</a></li> 
+        <li><a href="/">Home</a></li> 
       </ul>
         <header className="App-header">
         <table border="1">
             <thead>
             <tr>
                 <th>ID</th>
-                <th align="right">Use Pos Fk</th>
-                <th align="right">Title</th>
-                <th align="right">Excerpt</th>
-                <th align="right">Body</th>
-                <th align="right">Date Add</th>
-                <th align="right">Date Upd</th>
+                <th align="right">Name</th>                
+                <th align="right">Logo</th>
             </tr>
             </thead>
             <tbody>
-            {posts.map(todo => 
+            {brands.map(todo => 
                 <tr key={todo.id}>
                 <td>{todo.id}</td>
-                <td align="right">{todo.use_pos_fk}</td>
-                <td align="right">{todo.title}</td>
-                <td align="right">{todo.excerpt}</td>
-                <td align="right">{todo.body}</td>
-                <td align="right">{todo.date_add}</td>
-                <td align="right">{todo.date_upd}</td>
+                <td align="right">{todo.name}</td>
+                <td align="right">{todo.logo_url}</td>
                 </tr>
             )}
             </tbody>
@@ -83,4 +75,4 @@ class Posts extends React.Component {
   }
 }
 
-export default Posts;
+export default Brands;
